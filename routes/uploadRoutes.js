@@ -8,7 +8,7 @@ import { uploadDocument } from '../controllers/uploadController.js';
 const storage = new CloudinaryStorage({
     cloudinary,
     params: {
-        folder: "txigo_uploads",
+        folder: "broomboom_pilot_uploads",
         allowed_formats: ["jpg", "png", "jpeg", "webp", "pdf"],
     },
 });

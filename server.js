@@ -82,7 +82,7 @@ app.get('/create-admin', async (req, res) => {
 
 // Root Route
 app.get('/', (req, res) => {
-    res.send('Txigo Backend API is running on Vercel 🚀');
+    res.send('broomboom pilot backend is working');
 });
 
 // Error handling middleware

@@ -16,11 +16,11 @@ const seed = async () => {
 
         const admin = new Admin({
             name: 'Super Admin',
-            email: 'admin@txigo.com',
+            email: 'admin@broomboom.com',
             password: 'admin_password'
         });
         await admin.save();
-        console.log('Admin Created: admin@txigo.com / admin_password');
+        console.log('Admin Created: admin@broomboom.com / admin_password');
 
         const sampleDrivers = [
             {
