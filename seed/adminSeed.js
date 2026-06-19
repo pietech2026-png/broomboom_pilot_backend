@@ -17,18 +17,21 @@ const createAdmin = async () => {
   try {
     console.log("Checking if admin already exists...");
     const existingAdmin = await Admin.findOne({
-      email: "admin@example.com",
+      email: "admin@gmail.com",
     });
 
     if (existingAdmin) {
-      console.log("Admin already exists in database.");
+      console.log("Admin admin@gmail.com already exists in database. Updating password...");
+      existingAdmin.password = "admin@1";
+      await existingAdmin.save();
+      console.log("Password updated successfully!");
       process.exit();
     }
 
     console.log("Creating new admin object...");
     const admin = new Admin({
-      email: "admin@example.com",
-      password: "123456",
+      email: "admin@gmail.com",
+      password: "admin@1",
     });
 
     console.log("Saving admin to database (this includes hashing the password)...");
