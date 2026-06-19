@@ -14,6 +14,7 @@ import bookingRoutes from './routes/bookingRoutes.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import bcrypt from 'bcryptjs';
+import dbMiddleware from './middleware/dbMiddleware.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -43,6 +44,9 @@ app.use((req, res, next) => {
     console.log(`Incoming Request: ${req.method} ${req.url}`);
     next();
 });
+
+// Database connection middleware to guarantee connection is complete before queries run
+app.use(dbMiddleware);
 
 // Admin API Routes
 app.use('/api/admin', adminRoutes);
